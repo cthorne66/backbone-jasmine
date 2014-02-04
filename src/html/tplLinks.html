@@ -1,0 +1,9 @@
+<div class="starter-template">
+	<h1>Links</h1>
+	<p class="lead">Here you will find a basic example using a view, model, collection and template</p>
+	<ul>
+		{{ _.each(links, function(link) { }}
+		<li><a href="{{= link.url }}" class="example-links">{{= link.display }}</a></li>
+		{{ }); }}
+	</ul>
+</div>

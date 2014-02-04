@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Unit Tests</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=8, IE=9, IE=10" />
+  <link rel="shortcut icon" type="image/png" href="../src/lib/jasmine/jasmine-2.0.0/jasmine_favicon.png">
+  <link rel="stylesheet" type="text/css" href="../src/lib/jasmine/jasmine-2.0.0/jasmine.css">
+  <script type="text/javascript" src="../src/lib/require/require-2.1.9.js"></script>
+  <script type="text/javascript" src="../src/lib/jasmine/jasmine-2.0.0/jasmine.js"></script>
+  <script type="text/javascript" src="../src/lib/jasmine/jasmine-2.0.0/jasmine-html.js"></script>
+  <script type="text/javascript" src="../src/lib/jasmine/jasmine-2.0.0/boot.js"></script>
+
+ 
+  <script type="text/javascript">
+
+    require.config({
+      baseUrl: '../src/js',
+      paths: {
+        html: '../html',
+        lib: '../lib',
+        jquery: '../lib/jquery/jquery-1.10.2',
+        underscore: '../lib/underscore/underscore-1.5.2',
+        backbone: '../lib/backbone/backbone-1.1.0',
+        text: '../lib/require/text',
+        bootstrap: '../lib/bootstrap/bootstrap-3.0.3/js/bootstrap',
+        test: '../../test'
+      },
+      shim: {
+        underscore: {
+          exports: '_'
+        },
+        backbone: {
+          deps: ['underscore', 'jquery'],
+          exports: 'Backbone'
+        },
+        bootstrap: {
+          deps: ['jquery']
+        }
+      }
+    });
+  
+    require([
+      'test/specs/exampleSpec',
+      'test/specs/linksSpec'
+    ], function(){
+        // Initialize the HTML Reporter and execute the environment (setup by `boot.js`)
+        // This is currently needed to run Jasmine with an AMD
+        window.onload();
+    })
+
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>
